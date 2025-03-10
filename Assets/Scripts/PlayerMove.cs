@@ -7,9 +7,11 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float jumpForce = 5f;
+    public bool isGrounded = true; // 땅에 있는지 확인
     private Rigidbody2D rb;
+    
 
-    int move() {
+    void move() {
         Vector3 movement = Vector3.zero;
         Vector3 velocity = rb.velocity;
 
@@ -18,26 +20,33 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.D))
             movement += Vector3.right;
-
-        if (Input.GetKey(KeyCode.Space))
-        {
-            velocity += Vector3.up;
-        }
-        
         
         movement = movement.normalized * moveSpeed;
         
         rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
-
-        return 0;
+    }
+    
+    void jump() {
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            isGrounded = false; // 점프하면 공중 상태로 변경
+        }
+    }
+    
+    void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.CompareTag("Ground")) // "Ground" 태그와 충돌하면
+        {
+            isGrounded = true;
+        }
     }
 
     void Start() {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void update() {
-        
+    void Update() {
+        jump();
     }
     
     void FixedUpdate() {
