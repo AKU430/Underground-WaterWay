@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("플레이어 이동")]
     public float moveSpeed = 5f;
     public float jumpForce = 5f;
-    public bool isGrounded = true; // 땅에 있는지 확인
+    public bool isGrounded = true;
     private Rigidbody2D rb;
     
-
     void move() {
         Vector3 movement = Vector3.zero;
         Vector3 velocity = rb.velocity;
@@ -30,12 +30,12 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            isGrounded = false; // 점프하면 공중 상태로 변경
+            isGrounded = false;
         }
     }
     
     void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.CompareTag("Ground")) // "Ground" 태그와 충돌하면
+        if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
         }
