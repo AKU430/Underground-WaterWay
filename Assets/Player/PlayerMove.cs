@@ -10,16 +10,27 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 5f;
     public bool isGrounded = true;
     private Rigidbody2D rb;
+
+    [Header("기타 기능")] 
+    private SpriteRenderer PlayerRender;
+    
     
     void move() {
         Vector3 movement = Vector3.zero;
         Vector3 velocity = rb.velocity;
 
         if (Input.GetKey(KeyCode.A))
-            movement += Vector3.left;
+        {
+            movement += Vector3.left; 
+            PlayerRender.flipX = true;
+        }
 
         if (Input.GetKey(KeyCode.D))
+        {
             movement += Vector3.right;
+            PlayerRender.flipX = false;
+        }
+            
         
         movement = movement.normalized * moveSpeed;
         
@@ -41,8 +52,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void Start() {
+    void Start()
+    {
         rb = GetComponent<Rigidbody2D>();
+        PlayerRender = GetComponent<SpriteRenderer>();
     }
 
     void Update() {
