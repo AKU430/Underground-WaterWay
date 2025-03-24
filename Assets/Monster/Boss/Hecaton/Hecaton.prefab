@@ -27,11 +27,11 @@ Transform:
   m_GameObject: {fileID: 89078274587430516}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.06993057, w: 0.99755186}
-  m_LocalPosition: {x: 5.26, y: 0.46000004, z: 0}
-  m_LocalScale: {x: 9.471789, y: 9.599996, z: 1}
+  m_LocalPosition: {x: -0.03749907, y: -0.3, z: 0.03914965}
+  m_LocalScale: {x: 7.1038427, y: 7.199997, z: 0.75}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4437599701164125517}
+  m_Father: {fileID: 4478613143294956662}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -8.02}
 --- !u!212 &3773423118093832708
 SpriteRenderer:
@@ -241,11 +241,11 @@ Transform:
   m_GameObject: {fileID: 3949015947010697019}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.06993057, w: 0.99755186}
-  m_LocalPosition: {x: -5.26, y: 0.46000004, z: 0}
-  m_LocalScale: {x: 9.471789, y: 9.599996, z: 1}
+  m_LocalPosition: {x: 0.037499785, y: -0.29999998, z: 0.03914965}
+  m_LocalScale: {x: 7.1038427, y: 7.199997, z: 0.75}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4437599701164125517}
+  m_Father: {fileID: 3733289344878744127}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 8.02}
 --- !u!212 &7748106369861499589
 SpriteRenderer:
@@ -344,6 +344,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.41, y: 0.18}
   m_EdgeRadius: 0
+--- !u!1 &4376751258450965592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4478613143294956662}
+  m_Layer: 0
+  m_Name: RightArmController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4478613143294956662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4376751258450965592}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.31, y: 0.86, z: -0.052199528}
+  m_LocalScale: {x: 1.3333334, y: 1.3333334, z: 1.3333334}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7215606015058950925}
+  m_Father: {fileID: 4437599701164125517}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6410811771307342338
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,6 +386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4437599701164125517}
   - component: {fileID: 6156360273550512904}
+  - component: {fileID: 1437821059091442222}
   m_Layer: 0
   m_Name: Hecaton
   m_TagString: Untagged
@@ -375,9 +408,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2653682915862071116}
-  - {fileID: 7215606015058950925}
-  - {fileID: 1237652300266784679}
   - {fileID: 3989520062230381271}
+  - {fileID: 4478613143294956662}
+  - {fileID: 3733289344878744127}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6156360273550512904
@@ -401,6 +434,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1437821059091442222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6410811771307342338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 924b05048ee4a5f458d8201fe730dbab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4.5
+  hecatonRightArm: {fileID: 4376751258450965592}
+  hecatonLeftArm: {fileID: 7773796267349005625}
+  armHeight: 10
 --- !u!1 &7190335528161408447
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,3 +534,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &7773796267349005625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3733289344878744127}
+  m_Layer: 0
+  m_Name: LeftArmController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3733289344878744127
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7773796267349005625}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.31, y: 0.86, z: -0.052199528}
+  m_LocalScale: {x: 1.3333334, y: 1.3333334, z: 1.3333334}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1237652300266784679}
+  m_Father: {fileID: 4437599701164125517}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
