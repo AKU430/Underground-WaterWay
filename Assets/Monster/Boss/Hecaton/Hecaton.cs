@@ -12,6 +12,7 @@ public class Hecaton : MonoBehaviour
     [Header("Down Crash")]
     public GameObject hecatonRightArm;
     public GameObject hecatonLeftArm;
+    public Animator hecatonAnimator;
     public float armHeight; 
     
     public void Start()
@@ -24,7 +25,6 @@ public class Hecaton : MonoBehaviour
     {
         while (true)
         {
-            //랜덤으로 패턴뽑기
             int p = 0;
             switch (p)
             {
@@ -34,26 +34,21 @@ public class Hecaton : MonoBehaviour
                 default:
                     break;
             }
-            //애니메이션을 기본상태로
-            yield return new WaitForSeconds(0.5f);
+            yield return null;
         }
     }
     IEnumerator CrashAttackIE()
     {
-        for (int i = 0; i < 3; i++)
+        float timer = 0;
+        while (timer < 5)
         {
-            float elapsedTime = 0;
-            while (elapsedTime < 3)
-            {
-                elapsedTime += Time.deltaTime;
-                CrashAttackFollow();
-                yield return null;
-            }
-            //찍어
-            yield return new WaitForSeconds(1f);
+            CrashAttackFollow();
+            timer += Time.deltaTime;
+            yield return null;
         }
-
-        yield break;
+        hecatonAnimator.SetTrigger("Attack");
+        yield return new WaitForSeconds(hecatonAnimator.GetCurrentAnimatorStateInfo(0).length);
+        yield return new WaitForSeconds(3f);
     }
     void CrashAttackFollow()
     {

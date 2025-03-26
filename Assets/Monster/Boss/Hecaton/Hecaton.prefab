@@ -26,13 +26,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89078274587430516}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.06993057, w: 0.99755186}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.03749907, y: -0.3, z: 0.03914965}
   m_LocalScale: {x: 7.1038427, y: 7.199997, z: 0.75}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4478613143294956662}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -8.02}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3773423118093832708
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -240,13 +240,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3949015947010697019}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.06993057, w: 0.99755186}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.037499785, y: -0.29999998, z: 0.03914965}
   m_LocalScale: {x: 7.1038427, y: 7.199997, z: 0.75}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3733289344878744127}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 8.02}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7748106369861499589
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -446,10 +446,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 924b05048ee4a5f458d8201fe730dbab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4.5
+  speed: 10
   hecatonRightArm: {fileID: 4376751258450965592}
   hecatonLeftArm: {fileID: 7773796267349005625}
-  armHeight: 10
+  hecatonAnimator: {fileID: 6156360273550512904}
+  armHeight: 4.5
 --- !u!1 &7190335528161408447
 GameObject:
   m_ObjectHideFlags: 0
